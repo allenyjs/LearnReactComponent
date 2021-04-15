@@ -1,0 +1,15 @@
+.left-nav{
+    display: inline-block;
+    width: 30vw;
+    height: 100vh;
+    background-color: #cecece;
+    vertical-align: top;
+}
+
+.main-body{
+    display: inline-block;
+    width: 56vw;
+    height: 100vh;
+    background-color: #755252;
+    vertical-align: top;
+}
