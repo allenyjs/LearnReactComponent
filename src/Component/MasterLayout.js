@@ -11,6 +11,7 @@ class MasterLayout extends Component {
         }
         this.FuncChangeNav = this.ChangeNav.bind(this);
         this.FuncChangeBodyData = this.ChangeBodyData.bind(this);
+        this.FuncChangeBodyForLeft = this.ChangeBodyForLeft.bind(this);
     }
 
     ChangeNav(inputItems) {
@@ -21,10 +22,19 @@ class MasterLayout extends Component {
         this.setState({ mainBodyModel: { Title: title, Content: content } });
     }
 
+    ChangeBodyForLeft(){
+        alert("aaa");
+    }
+
     render() {
         return (
             <div>
-                <LeftNav vmodel={this.state.leftNavModel} funcFromMaster={this.FuncChangeNav}>功能清單</LeftNav>
+                <LeftNav vmodelLN={this.state.leftNavModel} 
+                funcFromMasterLN={this.FuncChangeNav}
+                vmodelMB={this.state.mainBodyModel} 
+                funcFromMasterMB={this.FuncChangeBodyData}>
+                    功能清單
+                </LeftNav>
                 <MainBody vmodel={this.state.mainBodyModel} funcFromMaster={this.FuncChangeBodyData} />
             </div>
         );

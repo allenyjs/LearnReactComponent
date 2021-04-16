@@ -16,11 +16,16 @@ class MainBody extends Component {
             this.props.funcFromMaster(this.state.originalData.Title, this.state.originalData.Content);
         }
         else {
-            this.state.originalData = { Title: this.props.vmodel.Title, Content: this.props.vmodel.Content };
+            this.setState({
+                originalData: {
+                    Title: this.props.vmodel.Title,
+                    Content: this.props.vmodel.Content
+                }
+            });
             this.props.funcFromMaster(title, content);
         }
 
-        this.state.hasChanged = !this.state.hasChanged;
+        this.setState({ hasChanged: !this.state.hasChanged });
     }
 
     render() {
